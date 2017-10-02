@@ -10,17 +10,18 @@ def largest_prime_factors(n)
   primes = []
   i = 2
   while i < Math.sqrt(n)
-    prime = true
+    is_prime = true
     primes.each do |prime|
       if i % prime == 0
-        prime = false
+        is_prime = false
         break
       end
     end
-    primes.push(i) if prime
+    primes.push(i) if is_prime && n % i == 0
     i = i + 1
   end
   puts primes.inspect
 end
 
 puts largest_prime_factors(13195) #5, 7, 13 and 29
+puts largest_prime_factors(600851475143) #5, 7, 13 and 29
