@@ -5,10 +5,20 @@
 
 #CONTINYA here on solvin this baby..
 
-def largest_palindrome_product(max = 999)
-
+#TODO: get this looping right..
+#TODO: need to take account of it being a product
+#TODO: figure out how much I need to actually check, and figure out my memoization approach.
+def largest_palindrome_product(max=999, min=100)
+  max.downto(min).each do |n|
+    if is_palindrome(n)
+      puts n
+      break
+    end
+  end
 end
 
 def is_palindrome(num)
-
+  num == num.to_s.reverse.to_i
 end
+
+largest_palindrome_product(999)
